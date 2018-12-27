@@ -1,3 +1,6 @@
+[![vTiger versions](https://img.shields.io/badge/vTiger-7.x-green.svg?maxAge=3600)](https://wiki.vtiger.com/index.php/Webservices_tutorials)
+[![License](https://img.shields.io/npm/l/vtiger.svg?maxAge=3600)](https://github.com/canguruhh/vtiger-node-api/blob/master/LICENSE)
+
 # Install
 ``` bash
 npm install vtiger
