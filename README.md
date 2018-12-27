@@ -3,7 +3,7 @@
 npm install vtiger
 ```
 
-# Usage
+# Usage examples
 ``` javascript
 let CRM = require('vtiger')
 let connection = new CRM.Connection('https://example.org', 'username', 'ACCESSKEY')
@@ -73,6 +73,27 @@ connection.login()
      console.error(error.message)
  })
 ```
+## Query
+``` javascript
+connection.login()
+ .then(()=>connection.query('SELECT * FROM Products WHERE unit_price >= 100;'))
+ .then((products)=>{
+     console.log(products)
+ })
+ .catch((error)=>{
+     //catch error
+     console.error(error.message)
+ })
+```
+## Others
+Some other available functions:
+- listTypes
+- describe
+- retrieveRelated
+- relatedTypes
+- queryRelated
+- deleteRelated
+- addRelated
 
 # License
 Permission is hereby granted, free of charge, to any person obtaining a copy
