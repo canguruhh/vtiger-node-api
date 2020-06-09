@@ -148,7 +148,7 @@ export class Connection {
         });
         if (!res.success) {
             if(!!this.on_failure) {
-                return this.on_failure(res, params)
+                return this.on_failure(res, params);
             } else {
                 console.error(res.error.message);
                 throw Error(res.error.code);
@@ -165,7 +165,7 @@ export class Connection {
         });
         if (!res.success) {
             if(!!this.on_failure) {
-                return this.on_failure(res, params)
+                return this.on_failure(res, params);
             } else {
                 console.error(res.error.message);
                 throw Error(res.error.code);
