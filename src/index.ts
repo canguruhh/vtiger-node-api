@@ -7,7 +7,7 @@ export class Connection {
     private session: string
     userId: string
 
-    constructor(private url, private username, private access_key) { }
+    constructor(private url, private username, private access_key, private on_failure = null) { }
 
     async login() {
         const challengeToken = (await this.getChallenge()).token;
@@ -147,8 +147,12 @@ export class Connection {
             formData: params,
         });
         if (!res.success) {
-            console.error(res.error.message);
-            throw Error(res.error.code);
+            if(!!this.on_failure) {
+                return this.on_failure(res, params)
+            } else {
+                console.error(res.error.message);
+                throw Error(res.error.code);
+            }
         }
         return res.result;
     }
@@ -160,8 +164,12 @@ export class Connection {
             json: true,
         });
         if (!res.success) {
-            console.error(res.error.message);
-            throw Error(res.error.code);
+            if(!!this.on_failure) {
+                return this.on_failure(res, params)
+            } else {
+                console.error(res.error.message);
+                throw Error(res.error.code);
+            }
         }
         return res.result;
     }
