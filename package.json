@@ -1,6 +1,6 @@
 {
   "name": "vtiger",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "VTiger API connector",
   "main": "dist/index.js",
   "types": "dist/types/crm.types.js",
